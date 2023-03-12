@@ -1,0 +1,46 @@
+.register {
+    height: calc(100%-1rem);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+
+
+}
+
+.form {
+
+    margin-top: .5rem;
+    width: 35%;
+
+
+
+}
+
+.buttonRegister {
+    color: rgb(54, 31, 1);
+    text-align: center;
+
+}
+
+@media(max-width:750px) {
+    .form {
+        width: 50%;
+
+    }
+}
+
+@media(max-width:450px) {
+    .form {
+        width: 65%;
+        font-size: .8rem;
+
+    }
+}
+
+@media(max-width:380px) {
+    .form {
+        width: 75%;
+
+    }
+}
