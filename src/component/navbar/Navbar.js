@@ -1,15 +1,20 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../auth/firebase-config';
 
 const Navbar = () => {
   let path = useLocation().pathname;
-  const [currentUser, setCurrentUser] = useState(true);
+  const { currentUser } = useContext(AuthContext);
+
   const navigate = useNavigate();
-  let displayName = 'Ibrahim';
-  const signOutFunc = () => {
-    navigate('/register');
+
+  const signOutFunc = async () => {
+    await signOut(auth);
+    navigate('/');
   };
   return (
     <div className="navbar">
@@ -25,10 +30,13 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <div className="logout">
-        <h6>{displayName}</h6>
-        <button onClick={signOutFunc}>Logout</button>
-      </div>
+      {currentUser ? (
+        <div className="logout">
+          <h6>{currentUser.displayName}</h6>
+
+          {currentUser && <button onClick={signOutFunc}>Logout</button>}
+        </div>
+      ) : null}
     </div>
   );
 };

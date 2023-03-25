@@ -1,0 +1,75 @@
+.movieContainer {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.search-form {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+
+
+}
+
+.search-form form {
+    width: 68%;
+
+
+}
+
+.search-form form input {
+
+    width: 100%;
+    border: none;
+    outline: none;
+    box-shadow: inset 1px 2px 3px rgba(7, 7, 7, 0.9);
+    color: rgb(2, 28, 51);
+    height: 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+
+}
+
+.buttonGroup {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin: 1rem auto;
+
+
+}
+
+.buttonGroup .button {
+
+    width: 6rem;
+    font-size: .8rem;
+    background-color: brown;
+    border: none;
+    outline: none;
+    color: antiquewhite;
+}
+
+.buttonGroup p {
+
+    margin: auto .6rem;
+    font-size: .8rem;
+    color: antiquewhite;
+    font-weight: 600;
+}
+
+.backToHome {
+
+    font-weight: 600;
+    width: 30%;
+    font-size: .9rem;
+    background-color: brown;
+    border: none;
+    outline: none;
+    color: antiquewhite;
+    margin: 1rem 35%;
+}
